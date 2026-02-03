@@ -60,6 +60,27 @@ if (ECT_SDK_BUILD_EXAMPLES)
         examples/drone_altitude_control.cpp
     )
     target_link_libraries(drone_altitude_control PRIVATE ect_sdk)
+
+    add_executable(saturation_stress_loop
+    examples/saturation_stress_loop.cpp
+)
+target_link_libraries(saturation_stress_loop PRIVATE ect_sdk)
+
+add_executable(noise_injection_loop
+    examples/noise_injection_loop.cpp
+)
+target_link_libraries(noise_injection_loop PRIVATE ect_sdk)
+
+add_executable(time_varying_target
+    examples/time_varying_target.cpp
+)
+target_link_libraries(time_varying_target PRIVATE ect_sdk)
+
+add_executable(time_varying_target_saturation_limit
+    examples/time_varying_target_saturation_limit.cpp
+)
+target_link_libraries(time_varying_target_saturation_limit PRIVATE ect_sdk)
+
 endif()
 
 # ------------------------------------------------------------------------------
@@ -70,4 +91,31 @@ if (ECT_SDK_BUILD_TESTS)
         tests/simple_loop_test.cpp
     )
     target_link_libraries(simple_loop_test PRIVATE ect_sdk)
+
+    add_executable(determinism_test
+        tests/determinism_test.cpp
+    )
+    target_link_libraries(determinism_test PRIVATE ect_sdk)
+
+    add_executable(boundedness_test
+    tests/boundedness_test.cpp
+)
+target_link_libraries(boundedness_test PRIVATE ect_sdk)
+
+add_executable(monotonicity_test
+    tests/monotonicity_test.cpp
+)
+target_link_libraries(monotonicity_test PRIVATE ect_sdk)
+
+add_executable(sign_preservation_test
+    tests/sign_preservation_test.cpp
+)
+target_link_libraries(sign_preservation_test PRIVATE ect_sdk)
+
+add_executable(contraction_ratio_test
+    tests/contraction_ratio_test.cpp
+)
+target_link_libraries(contraction_ratio_test PRIVATE ect_sdk)
+
 endif()
+
